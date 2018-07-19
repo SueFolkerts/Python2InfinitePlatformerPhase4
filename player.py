@@ -9,17 +9,19 @@ class Player(pygame.sprite.Sprite):
         # index 0 represents dx, index 1 represents dy
         self.xy_speed = pygame.math.Vector2(0, 0)
         self.facing = "R"
-        # new follows
+        # new follows  **********************************************
         self.jump_speed = -14
 
     def update(self, platforms):
-    # new above
+    # new above   ****************************************************
     #update the image and direction
         self.image = self.images['p1_jump']
         if self.facing == "L":
             self.image = pygame.transform.flip(self.image, True, False)
 
-        # new follows
+        # new follows ******************************************************************************
+        screen_info = pygame.display.Info()
+
         # move the player
         self.rect.move_ip(self.xy_speed)
         # handle left/right movement
@@ -46,4 +48,4 @@ class Player(pygame.sprite.Sprite):
     def right(self):
         self.facing = "R"
         self.xy_speed[0] = 6
-        # new above
+        # new above ****************************************************************************************

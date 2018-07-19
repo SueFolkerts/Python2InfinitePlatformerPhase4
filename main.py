@@ -4,7 +4,6 @@ import sys
 import random
 from platforms import Platforms
 
-# new follows
 from player import *
 def get_player_actions():
     p1_actions = {}
@@ -18,17 +17,14 @@ def get_player_actions():
 
 def init(p1_actions):
     global player
-    # new above
     for i in range(height // 100):
         for j in range(width // 420):
             plat = Platforms((random.randint(5, (width - 50) // 10)
-                * 10, 120 * i), 'images/grassHalf.png', 70, 40)
+                              * 10, 120 * i), 'images/grassHalf.png', 70, 40)
             platforms.add(plat)
-        # new follows
-        player = Player((platforms.sprites()[-1].rect.centerx,
+    player = Player((platforms.sprites()[-1].rect.centerx,
                          platforms.sprites()[-1].rect.centery - 300), p1_actions)
-        sprite_list.add(player)
-        # new above
+    sprite_list.add(player)
 
 pygame.init()
 screen_info = pygame.display.Info()
@@ -62,6 +58,7 @@ def main():
             player.left()
         if keys[pygame.K_RIGHT]:
             player.right()
+        player.update(platforms)
         # new above    *********************************************
         screen.fill(color)
         platforms.draw(screen)

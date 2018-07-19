@@ -8,5 +8,5 @@ class Platforms(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.center = pos
 
-def scroll(self, change):
-    self.rect.top += change
+    def scroll(self, change):
+        self.rect.top += change
