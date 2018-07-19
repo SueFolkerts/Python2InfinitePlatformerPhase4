@@ -41,11 +41,11 @@ sprite_list = pygame.sprite.Group()
 platforms = pygame.sprite.Group()
 def main():
     game_over = False
-    # new follows
+    # new follows *****************************
     global player
     p1_actions = get_player_actions()
     init(p1_actions)
-    # new above
+    # new above  ******************************
     while True:
         clock.tick(60)
         for event in pygame.event.get():
@@ -56,13 +56,13 @@ def main():
                     pygame.display.set_mode(size, FULLSCREEN)
                 if event.key == K_ESCAPE:
                     pygame.display.set_mode(size)
-        # new follows
+        # new follows  ****************************************
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT]:
             player.left()
         if keys[pygame.K_RIGHT]:
             player.right()
-        # new above
+        # new above    *********************************************
         screen.fill(color)
         platforms.draw(screen)
         sprite_list.draw(screen)
