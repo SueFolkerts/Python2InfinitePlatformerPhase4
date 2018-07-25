@@ -13,13 +13,12 @@ class Player(pygame.sprite.Sprite):
         self.jump_speed = -14
 
     def update(self, platforms):
-    # new above   ****************************************************
     #update the image and direction
         self.image = self.images['p1_jump']
         if self.facing == "L":
             self.image = pygame.transform.flip(self.image, True, False)
 
-        # new follows ******************************************************************************
+ # new follows ******************************************************************************
         screen_info = pygame.display.Info()
 
         # move the player
@@ -40,7 +39,7 @@ class Player(pygame.sprite.Sprite):
                 self.xy_speed[1] = self.jump_speed
         # gravity
         self.xy_speed[1] += .5
-
+   # NEW ABOVE *************************************************************************************
     def left(self):
         self.facing = 'L'
         self.xy_speed[0] = -6
