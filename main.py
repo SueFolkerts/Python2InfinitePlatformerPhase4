@@ -40,8 +40,9 @@ def main():
     # new follows *****************************
     global player
     p1_actions = get_player_actions()
-    init(p1_actions)
     # new above  ******************************
+    init(p1_actions)
+
     while True:
         clock.tick(60)
         for event in pygame.event.get():
